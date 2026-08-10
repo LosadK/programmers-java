@@ -5,12 +5,12 @@ class Solution {
         int answer = 0;
         
         // 내 풀이
-        // array = Arrays.stream(array).sorted().toArray();
-        // answer = array[array.length / 2];
+        array = Arrays.stream(array).sorted().toArray();
+        answer = array[array.length / 2];
         
 
         // 다른 풀이
-        
+        /*
         for (int i = 0; i < array.length -1; i++) {
             int minIndex = i;
 
@@ -26,7 +26,7 @@ class Solution {
         }
         
         answer = array[array.length / 2];
-        
+        */
         
         
         return answer;
