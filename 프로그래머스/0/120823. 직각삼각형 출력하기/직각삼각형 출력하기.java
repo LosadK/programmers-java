@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Solution {
     public static void main(String[] args) {
@@ -6,6 +7,7 @@ public class Solution {
         int n = sc.nextInt();
         
         // 내 풀이
+        /*
         final String ASTER = "*";
         
         int count = 0;
@@ -19,9 +21,22 @@ public class Solution {
             }
 
             sb.append("\n");
-        }        
-
+        }
         
         System.out.println(sb);
+        */
+        
+        
+        // 다른 풀이1
+        for (int i = 1; i <= n; i++) {
+            System.out.println("*".repeat(i));
+        }
+        
+        
+        // 다른 풀이2
+        /*
+        IntStream.rangeClosed(1, n).forEach(i -> System.out.println("*".repeat(i)));
+        */
+        
     }
 }
