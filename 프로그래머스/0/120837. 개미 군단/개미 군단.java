@@ -2,7 +2,8 @@ class Solution {
     public int solution(int hp) {
         int answer = 0;
         
-        // 내 풀이
+        // 내 풀이1
+        /*
         final int GENERAL = 5;
         final int SOLDIER = 3;
         final int WORKER = 1;
@@ -24,7 +25,21 @@ class Solution {
             if (remain == 0) {
                 break;
             }
-        }        
+        }
+        */
+        
+        
+        // 내 풀이2
+        final int GENERAL = 5;
+        final int SOLDIER = 3;
+
+        int count_general = hp / GENERAL;
+        int remain = hp % GENERAL;
+        int count_soldier = remain / SOLDIER;
+
+        remain %= SOLDIER;
+
+        answer = count_general + count_soldier + remain;        
         
         
         return answer;
