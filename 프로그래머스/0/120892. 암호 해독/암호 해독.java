@@ -1,3 +1,6 @@
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 class Solution {
     public String solution(String cipher, int code) {
         String answer = "";
@@ -20,6 +23,7 @@ class Solution {
         
         
         // 다른 풀이1
+        /*
         StringBuilder sb = new StringBuilder();
         
         for (int i = 0; i < cipher.length(); i++) {
@@ -29,6 +33,14 @@ class Solution {
         }
         
         answer = sb.toString();
+        */
+        
+        
+        // 다른 풀이2
+        answer = IntStream.range(0, cipher.length())
+            .filter(i -> (i + 1) % code == 0)
+            .mapToObj(i -> String.valueOf(cipher.charAt(i)))
+            .collect(Collectors.joining());
         
         
         return answer;
