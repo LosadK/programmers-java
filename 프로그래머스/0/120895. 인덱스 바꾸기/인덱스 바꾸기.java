@@ -26,12 +26,25 @@ class Solution {
         
         
         // 다른 풀이1
+        /*
         char[] my_string_arr = my_string.toCharArray();
 
         my_string_arr[num1] = my_string.charAt(num2);
         my_string_arr[num2] = my_string.charAt(num1);
 
-        answer = String.valueOf(my_string_arr);        
+        answer = String.valueOf(my_string_arr);
+        */
+        
+        
+        // 다른 풀이2
+        char num1_char = my_string.charAt(num1);
+        char num2_char = my_string.charAt(num2);
+
+        StringBuilder sb = new StringBuilder(my_string);
+        sb.setCharAt(num1, num2_char);
+        sb.setCharAt(num2, num1_char);
+
+        answer = sb.toString();
         
         
         return answer;
