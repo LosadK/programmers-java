@@ -3,6 +3,7 @@ class Solution {
         String answer = "";
         
         // 내 풀이
+        /*
         char num1_char = my_string.charAt(num1);
         char num2_char = my_string.charAt(num2);
 
@@ -21,6 +22,16 @@ class Solution {
         }
         
         answer = sb.toString();
+        */
+        
+        
+        // 다른 풀이1
+        char[] my_string_arr = my_string.toCharArray();
+
+        my_string_arr[num1] = my_string.charAt(num2);
+        my_string_arr[num2] = my_string.charAt(num1);
+
+        answer = String.valueOf(my_string_arr);        
         
         
         return answer;
