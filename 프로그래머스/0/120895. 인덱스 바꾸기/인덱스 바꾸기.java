@@ -1,3 +1,6 @@
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 class Solution {
     public String solution(String my_string, int num1, int num2) {
         String answer = "";
@@ -37,6 +40,7 @@ class Solution {
         
         
         // 다른 풀이2
+        /*
         char num1_char = my_string.charAt(num1);
         char num2_char = my_string.charAt(num2);
 
@@ -45,6 +49,20 @@ class Solution {
         sb.setCharAt(num2, num1_char);
 
         answer = sb.toString();
+        */
+        
+        
+        // 다른 풀이3
+        answer = IntStream.range(0, my_string.length())
+                .mapToObj(i ->
+                        String.valueOf(
+                                (i == num1) ? my_string.charAt(num2)
+                                        : (i == num2) ? my_string.charAt(num1)
+                                        : my_string.charAt(i)
+                        )
+                )
+                .collect(Collectors.joining());
+        
         
         
         return answer;
