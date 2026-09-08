@@ -14,10 +14,24 @@ class Solution {
         */
         
         
-        // 다른 풀이
+        // 다른 풀이1
+        /*
         answer = String.valueOf(age).chars()
                 .mapToObj(i -> String.valueOf((char) (i - '0' + 'a')))
                 .collect(Collectors.joining());
+        */
+        
+        
+        // 다른 풀이2
+        String alphabet = "abcdefghij";
+        
+        StringBuilder sb = new StringBuilder();
+        
+        for (char c : String.valueOf(age).toCharArray()) {
+            sb.append(alphabet.charAt(c - '0'));
+        }
+        
+        answer = sb.toString();        
         
         
         return answer;
