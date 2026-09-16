@@ -31,10 +31,18 @@ class Solution {
         
         
         // 다른 풀이1
+        /*
         answer = my_string.chars()
                 .mapToObj(Character::toString)
                 .distinct()
                 .collect(Collectors.joining(""));
+        */
+        
+        
+        // 다른 풀이2
+        answer = Arrays.stream(my_string.split(""))
+                .distinct()
+                .collect(Collectors.joining());
         
         
         return answer;
