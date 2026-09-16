@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 class Solution {
     public String solution(String my_string) {
@@ -20,11 +21,20 @@ class Solution {
 
         
         // 내 풀이 2
+        /*
         Set<String> trimmed = new LinkedHashSet<>(  // 들어온 순서를 유지하면서 중복 제거
                 Arrays.asList(my_string.split(""))
         );
 
         answer = String.join("", trimmed);
+        */
+        
+        
+        // 다른 풀이1
+        answer = my_string.chars()
+                .mapToObj(Character::toString)
+                .distinct()
+                .collect(Collectors.joining(""));
         
         
         return answer;
