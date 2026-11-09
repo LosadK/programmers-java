@@ -3,6 +3,7 @@ class Solution {
         String[] answer = {};
         
         // 내 풀이
+        /*
         int length = my_str.length();
         int substr_count = (length + n - 1) / n;
         
@@ -21,6 +22,20 @@ class Solution {
 
             start += n;
             last += n;
+        }
+        */
+        
+        
+        // 다른 풀이
+        int length = my_str.length();
+        
+        answer = new  String[(length + n - 1) / n];
+
+        for (int i = 0; i < answer.length; i++) {
+            int start = i * n;
+            int end = Math.min(start + n, length);
+
+            answer[i] = my_str.substring(start, end);
         }        
         
         
